@@ -4,7 +4,7 @@ XTremePush guide
 ### Introduction
 
 
-[Download](http://www.google.com) the latest library version. The archive should contain next files:
+[Download](https://github.com/xtremepush/XtremePush_iOS/archive/master.zip) the latest library version. The archive should contain the following files:
 
 * XPush.a: The required library
 * XPush.h: The required header file containing methods declarations for using XPush library
