@@ -2,8 +2,8 @@
 //  XPush.h
 //  XtremePush
 //
-//  Created by Andrew Kopanev on 3/10/13.
-//  Copyright (c) 2013 Andrew Kopanev. All rights reserved.
+//  Created by Xtremepush on 3/10/13.
+//  Copyright (c) 2013 Xtremepush. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
