@@ -4,7 +4,7 @@ XTremePush guide
 ### Introduction
 
 
-[Download](https://github.com/xtremepush/XtremePush_iOS/archive/master.zip) the latest library version. The archive should contain the following files:
+[Download](https://github.com/xtremepush/XtremePush_iOS/archive/master.zip) the latest library version. The archive should contain next files:
 
 * XPush.a: The required library
 * XPush.h: The required header file containing methods declarations for using XPush library
@@ -24,6 +24,7 @@ XTremePush guide
 4. In your Info.plist file add "XtremePushApplicationKey" in key field and your application key in value field.
 5. In your Info.plist file add "XtremePushSandoxMode" in key field and set it to YES if you want to use APNS in "sandbox" mode.
 6. In your Application Delegate: import XPush and inside `applicationDidFinishLaunching:withOptions:` add next code:
+7. Make sure you select the same Provisioning profile which is associated with the p12 you uploaded on the dashboard.
 
 ```objc
 // Uncomment next line to use sendbox mode
@@ -79,11 +80,4 @@ and call corresponding remote notifications handling methods in Application dele
 + (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 + (void)applicationDidReceiveRemoteNotification:(NSDictionary *)userInfo;
 + (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
-```
-
-* Tag methods
-
-```objc
-// Send tags to server to track events
-+ (void)hitTag:(NSString *)tag;
 ```
