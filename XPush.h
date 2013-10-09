@@ -24,6 +24,7 @@
 + (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
 
 + (NSString *)version;
++ (NSDictionary *)deviceInfo;
 
 + (void)hitTag:(NSString *)tag;
 

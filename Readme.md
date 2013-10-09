@@ -56,6 +56,8 @@ and call corresponding remote notifications handling methods in Application dele
 ```objc
 // returns version of XPush library
 + (NSString *)version;
+// returns device token for Apple push notifications and XPush device identifier
++ (NSDictionary *)deviceInfo;
 ```
 
 * Setting up library
