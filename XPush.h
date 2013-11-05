@@ -29,7 +29,7 @@ extern NSString *const XPushDeviceRegistrationNotification;
 + (NSDictionary *)deviceInfo;
 
 + (void)hitTag:(NSString *)tag;
-+ (void)getPushNotificationsFromDate:(NSDate *)date completion:(void(^)(NSArray *pushList, NSError *error))completion;
++ (void)getPushNotificationsOffset:(NSUInteger)offset limit:(NSUInteger)limit completion:(void(^)(NSArray *pushList, NSError *error))completion;
 + (void)showPushListController;
 
 @end
@@ -45,6 +45,7 @@ extern NSString *const XPushDeviceRegistrationNotification;
 @property (nonatomic, readonly) NSString    *messageId;
 @property (nonatomic, readonly) NSString    *url;
 @property (nonatomic, readonly) BOOL        shouldOpenInApp;
+@property (nonatomic, readonly) BOOL        isRead;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

@@ -46,7 +46,7 @@ and call corresponding remote notifications handling methods in Application dele
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
 	[XPush applicationDidFailToRegisterForRemoteNotificationsWithError:error];
-}
+
 ```
 
 ### Methods description
@@ -72,6 +72,17 @@ and call corresponding remote notifications handling methods in Application dele
 // Registering for notifications methods
 + (void)registerForRemoteNotificationTypes:(UIRemoteNotificationType)types;
 + (void)unregisterForRemoteNotifications;
+```
+
+* Service methods
+
+```objc
+// send tag to server
++ (void)hitTag:(NSString *)tag;
+// load list of push notifications with specific offset and limit
++ (void)getPushNotificationsOffset:(NSUInteger)offset limit:(NSUInteger)limit completion:(void(^)(NSArray *pushList, NSError *error))completion;
+// present controller with list of pushes
++ (void)showPushListController;
 ```
 
 * System methods
