@@ -45,7 +45,7 @@ extern NSString *const XPushDeviceRegistrationNotification;
 @property (nonatomic, readonly) NSString    *messageId;
 @property (nonatomic, readonly) NSString    *url;
 @property (nonatomic, readonly) BOOL        shouldOpenInApp;
-@property (nonatomic, readonly) BOOL        isRead;
+@property (nonatomic, assign)   BOOL        isRead;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
