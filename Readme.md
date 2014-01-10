@@ -4,7 +4,7 @@ XTremePush guide
 ### Introduction
 
 
-[Download](https://github.com/xtremepush/XtremePush_iOS/archive/master.zip) the latest library version. The archive should contain next files:
+[Download](https://github.com/xtremepush/XtremePush_iOS/archive/master.zip) the latest library version. The archive should contain the following files:
 
 * XPush.a: The required library
 * XPush.h: The required header file containing methods declarations for using XPush library
@@ -21,10 +21,9 @@ XTremePush guide
 	* CoreTelephony
 	* CFNetwork
 	* libz.dlib
-4. In your Info.plist file add "XtremePushApplicationKey" in key field and your application key in value field. **You can find the "XtremePushApplicationKey" in the Settings (General Settings) page of your app under 'App Key'.**
-5. In your Info.plist file add "XtremePushSandoxMode" in key field and set it to YES if you want to use APNS in "Sandbox" gateway. **NOTE: Sandbox Mode is only used for DEBUG builds compiled with development mobile provisioning profile! For Ad Hoc and App Store builds, please, make sure to turn Sandbox Mode off by setting the value to NO or removing the key.**
-6. Make sure you select the same Provisioning profile which is associated with the p12 you uploaded on the settings page of your app on dashboard.
-7. In your Application Delegate: import XPush and inside `applicationDidFinishLaunching:withOptions:` add the following code:
+4. In your Info.plist file add "XtremePushApplicationKey" in key field and your application key in value field.
+5. In your Info.plist file add "XtremePushSandoxMode" in key field and set it to YES if you want to use APNS in "sandbox" mode.
+6. In your Application Delegate: import XPush and inside `applicationDidFinishLaunching:withOptions:` add next code:
 
 ```objc
 // Uncomment next line to use sendbox mode
@@ -46,7 +45,7 @@ and call corresponding remote notifications handling methods in Application dele
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
 	[XPush applicationDidFailToRegisterForRemoteNotificationsWithError:error];
-
+}
 ```
 
 ### Methods description
@@ -56,8 +55,6 @@ and call corresponding remote notifications handling methods in Application dele
 ```objc
 // returns version of XPush library
 + (NSString *)version;
-// returns device token for Apple push notifications and XPush device identifier
-+ (NSDictionary *)deviceInfo;
 ```
 
 * Setting up library
@@ -74,17 +71,6 @@ and call corresponding remote notifications handling methods in Application dele
 + (void)unregisterForRemoteNotifications;
 ```
 
-* Service methods
-
-```objc
-// send tag to server
-+ (void)hitTag:(NSString *)tag;
-// load list of push notifications with specific offset and limit
-+ (void)getPushNotificationsOffset:(NSUInteger)offset limit:(NSUInteger)limit completion:(void(^)(NSArray *pushList, NSError *error))completion;
-// present controller with list of pushes
-+ (void)showPushListController;
-```
-
 * System methods
 
 ```objc
@@ -93,4 +79,11 @@ and call corresponding remote notifications handling methods in Application dele
 + (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 + (void)applicationDidReceiveRemoteNotification:(NSDictionary *)userInfo;
 + (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
+```
+
+* Tag methods
+
+```objc
+// Send tags to server to track events
++ (void)hitTag:(NSString *)tag;
 ```
