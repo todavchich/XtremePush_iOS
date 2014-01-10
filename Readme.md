@@ -21,13 +21,13 @@ XTremePush guide
 	* CoreTelephony
 	* CFNetwork
 	* libz.dlib
-4. In your Info.plist file add "XtremePushApplicationKey" in key field and your application key in value field.
-5. In your Info.plist file add "XtremePushSandoxMode" in key field and set it to YES if you want to use APNS in "sandbox" mode.
-6. In your Application Delegate: import XPush and inside `applicationDidFinishLaunching:withOptions:` add next code:
+4. In your Info.plist file add "XtremePushApplicationKey" in key field and your application key in value field. **You can find the "XtremePushApplicationKey" in the Settings (General Settings) page of your app under 'App Key'.**
+5. In your Info.plist file add "XtremePushSandoxMode" in key field and set it to YES if you want to use APNS in "Sandbox" gateway. **NOTE: Sandbox Mode is only used for DEBUG builds compiled with development mobile provisioning profile! For Ad Hoc and App Store builds, please, make sure to turn Sandbox Mode off by setting the value to NO or removing the key.**
+6. Make sure you select the same Provisioning profile which is associated with the p12 you uploaded on the settings page of your app on dashboard.
+7. In your Application Delegate: import XPush and inside `applicationDidFinishLaunching:withOptions:` add the following code:
 
 ```objc
-// Uncomment next line to use sendbox mode
-// [XPush setSandboxModeOn:YES];
+
 [XPush registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge];
 [XPush applicationDidFinishLaunchingWithOptions:launchOptions];
 ```
