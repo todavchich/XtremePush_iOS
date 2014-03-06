@@ -77,11 +77,15 @@ extern NSString *const XPushDeviceRegistrationNotification;
  */
 + (void)hitTag:(NSString *)tag;
 /**
+ *	Calls "impressionHit" api method.
+ */
++ (void)hitImpression:(NSString *)impression;
+/**
  *	Calls "pushList" api method.
  */
 + (void)getPushNotificationsOffset:(NSUInteger)offset limit:(NSUInteger)limit completion:(void(^)(NSArray *pushList, NSError *error))completion;
 /**
- *	Shows XPPushListViewController like modal view controller.
+ *	Shows XPPushListViewController like modal view controller. Shows Inbox screen.
  */
 + (void)showPushListController;
 
